@@ -11,11 +11,7 @@
 
     if (referringDomain !== allowedDomain) {
         window.location.href = "https://www.bing.com";
-    } else {
-        // Only redirect if the referring domain matches exactly
-        // Remove the else condition if you want to allow subpages and paths
-        window.location.href = "https://www.google.com";
-    }
+    } 
 }
 
 // Call the function when the page loads
