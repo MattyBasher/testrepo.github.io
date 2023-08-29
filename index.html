@@ -2,21 +2,23 @@
 <html>
 <head>
     <title>Your Website</title>
-    <script>const allowedDomain = "patreon.com"; // Replace with your allowed domain
+    <script>const allowedDomain = "example.com"; // Replace with your allowed domain
 
- 
-function checkReferringDomain() {
-    const referringDomain = document.referrer
-        ? new URL(document.referrer).hostname
-        : null;
+        function checkReferringDomain() {
+            const referringDomain = document.referrer
+                ? new URL(document.referrer).hostname
+                : null;
 
-    // Check if the referring domain is "patreon.com" or a subdomain of it
-    if (referringDomain === allowedDomain || referringDomain.endsWith("." + allowedDomain)) {
-         window.location.href = "https://www.google.com";
-    } else {
-        window.location.href = "https://www.bing.com";
-    }
-}
+            if (referringDomain !== allowedDomain) {
+                window.location.href = "https://www.bing.com";
+            }
+            else {
+                window.location.href = "https://www.google.com";
+            }
+        }
+
+        // Call the function when the page loads
+        window.onload = checkReferringDomain;
 
 // Call the function when the page loads
 window.onload = checkReferringDomain;
